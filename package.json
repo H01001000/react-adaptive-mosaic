@@ -1,0 +1,36 @@
+{
+  "name": "react-adaptive-mosaic",
+  "version": "0.1.0",
+  "description": "React Adaptive Mosaic — responsive CSS grid mosaic layout for images.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "yarn@4.4.1",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "exports": {
+    ".": {
+      "types": "./src/index.tsx",
+      "default": "./src/index.tsx"
+    }
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
+  "peerDependencies": {
+    "@mui/material": "^7.3.5",
+    "next": "^16.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.4",
+    "@mui/material": "^7.3.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "next": "^16.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "typescript": "^5.7.2"
+  }
+}

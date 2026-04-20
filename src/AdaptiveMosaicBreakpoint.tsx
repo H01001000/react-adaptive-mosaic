@@ -1,26 +1,18 @@
 "use client";
 
-import { Box } from "@mui/material";
-import type { ImageProps } from "next/image";
-import DynamicPhotoGalleryGrid from "./DynamicPhotoGalleryGrid";
-import type { RenderPhotoGalleryCell } from "./types";
+import AdaptiveMosaicGrid from "./AdaptiveMosaicGrid";
+import "./AdaptiveMosaic.css";
+import type { ImageProps, MosaicImage, RenderMosaicCell } from "./types";
 
-interface DynamicPhotoGalleryBreakpointProps {
-  images: Array<
-    ImageProps & {
-      assetId: string;
-      width: number;
-      height: number;
-      src: string;
-    }
-  >;
+interface AdaptiveMosaicBreakpointProps {
+  images: MosaicImage[];
   columns: number;
   rowMargin: number;
-  renderCell: RenderPhotoGalleryCell;
+  renderCell: RenderMosaicCell;
 }
 
-export default function DynamicPhotoGalleryBreakpoint(
-  props: DynamicPhotoGalleryBreakpointProps,
+export default function AdaptiveMosaicBreakpoint(
+  props: AdaptiveMosaicBreakpointProps,
 ) {
   const layout: boolean[][] = [new Array(props.columns).fill(false)];
   let lastRowWithEmptySlot = 0;
@@ -276,51 +268,40 @@ export default function DynamicPhotoGalleryBreakpoint(
   });
 
   return (
-    <Box
-      sx={{
+    <div
+      className="adaptive-mosaic-grid-root"
+      style={{
         minHeight: `${(layout.length * 100) / props.columns}vw`,
-        display: "grid",
         gridTemplateColumns: `repeat(${props.columns}, 1fr)`,
         gridTemplateRows: `repeat(${layout.length}, 1fr)`,
       }}
     >
       {imagesWithLayout.map((image) => (
-        <Box
-          sx={{
-            width: "100%",
-          }}
+        <div
+          className="adaptive-mosaic-cell"
+          key={`${image.src}-${image.top}-${image.left}`}
           style={{
             gridArea: `${image.top + 1} / ${image.left + 1} / ${image.top + image.heightBlock + 1} / ${image.left + image.widthBlock + 1}`,
             aspectRatio: `${image.widthBlock} / ${image.heightBlock}`,
           }}
-          key={`${image.src}-${image.top}-${image.left}`}
         >
-          <Box sx={{ width: "100%", height: "100%", padding: "4px" }}>
-            <DynamicPhotoGalleryGrid
+          <div className="adaptive-mosaic-cell-pad">
+            <AdaptiveMosaicGrid
               columns={props.columns}
               heightBlock={image.heightBlock}
               rowMargin={props.rowMargin}
             >
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  overflow: "hidden",
-                  position: "relative",
-                  borderRadius: "12px",
-                  cursor: "pointer",
-                }}
-              >
+              <div className="adaptive-mosaic-cell-frame">
                 {props.renderCell({
                   image,
                   columns: props.columns,
                   rowMargin: props.rowMargin,
                 })}
-              </Box>
-            </DynamicPhotoGalleryGrid>
-          </Box>
-        </Box>
+              </div>
+            </AdaptiveMosaicGrid>
+          </div>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 }

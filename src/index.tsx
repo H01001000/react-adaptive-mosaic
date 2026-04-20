@@ -1,8 +1,10 @@
-export type { DynamicPhotoGalleryProps } from "./DynamicPhotoGallery";
-export { default as DynamicPhotoGallery } from "./DynamicPhotoGallery";
-export { default as DynamicPhotoGalleryGrid } from "./DynamicPhotoGalleryGrid";
+export type { AdaptiveMosaicProps } from "./AdaptiveMosaic";
+export { default as AdaptiveMosaic } from "./AdaptiveMosaic";
+export { default as AdaptiveMosaicGrid } from "./AdaptiveMosaicGrid";
 export type {
-  LaidOutPhotoGalleryImage,
-  PhotoGalleryImage,
-  RenderPhotoGalleryCell,
+  ImageProps,
+  LaidOutMosaicImage,
+  MosaicImage,
+  RenderMosaicCell,
+  StaticImageData,
 } from "./types";

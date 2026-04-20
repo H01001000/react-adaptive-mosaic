@@ -1,0 +1,23 @@
+.adaptive-mosaic-grid-root {
+  display: grid;
+}
+
+.adaptive-mosaic-cell {
+  width: 100%;
+}
+
+.adaptive-mosaic-cell-pad {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+}
+
+.adaptive-mosaic-cell-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  cursor: pointer;
+}

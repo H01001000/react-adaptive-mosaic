@@ -2,7 +2,7 @@
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
-export default function DynamicPhotoGalleryGrid({
+export default function AdaptiveMosaicGrid({
   children,
   columns,
   heightBlock,

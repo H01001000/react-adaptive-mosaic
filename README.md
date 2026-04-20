@@ -4,6 +4,12 @@ Responsive **CSS Grid** mosaic layout for image galleries in **React**. Breakpoi
 
 No **Next.js** or **MUI** dependency — only `react` and `react-dom`.
 
+## Demo
+
+![react-adaptive-mosaic demo](./assets/demo/mosaic-demo.png)
+
+Demo image location: `./assets/demo/mosaic-demo.png`
+
 ## Features
 
 - **Breakpoint-aware layouts** — one grid per breakpoint; injected CSS and `@media` rules show only the matching range (responsive and SSR-friendly; no client-only breakpoint detection for which grid is visible).

@@ -2,8 +2,6 @@
 
 Responsive **CSS Grid** mosaic layout for image galleries in **React**. Breakpoint switching uses **CSS media queries** (injected rules), so the layout is **SSR-friendly**: the server can emit the same markup the browser styles, without relying on `window` to pick a grid. Images are bucketed by aspect ratio, packed into a column count you choose per breakpoint, and rendered with a `renderCell` callback so you control markup (`<img>`, a lazy loader, or a framework-specific image component).
 
-No **Next.js** or **MUI** dependency — only `react` and `react-dom`.
-
 ## Why this design
 
 This layout is designed to solve a common problem for photographers: a single shoot often includes both tall portrait frames and wide landscape frames. Standard uniform grids, or row/column-first layouts common in other gallery libraries, often crop too aggressively or leave awkward whitespace. `react-adaptive-mosaic` packs mixed aspect ratios into a responsive, SSR-friendly mosaic so vertical and horizontal images can sit together naturally.

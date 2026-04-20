@@ -4,6 +4,10 @@ Responsive **CSS Grid** mosaic layout for image galleries in **React**. Breakpoi
 
 No **Next.js** or **MUI** dependency — only `react` and `react-dom`.
 
+## Why this design
+
+This layout is designed to solve a common problem for photographers: a single shoot often includes both tall portrait frames and wide landscape frames. Standard uniform grids, or row/column-first layouts common in other gallery libraries, often crop too aggressively or leave awkward whitespace. `react-adaptive-mosaic` packs mixed aspect ratios into a responsive, SSR-friendly mosaic so vertical and horizontal images can sit together naturally.
+
 ## Demo
 
 ![react-adaptive-mosaic demo](./assets/demo/mosaic-demo.png)
